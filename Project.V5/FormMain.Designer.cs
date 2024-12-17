@@ -1,6 +1,6 @@
 ﻿namespace Project.V5
 {
-    partial class Form1
+    partial class FormMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,12 +28,102 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            panelInformation_SYP = new Panel();
+            panelManagerData_SYP = new Panel();
+            panelDataFile_SYP = new Panel();
+            dataGridViewOriginalFile_SYP = new DataGridView();
+            splitter1 = new Splitter();
+            buttonDone_SYP = new Button();
+            openFileDialogTask_SYP = new OpenFileDialog();
+            panelManagerData_SYP.SuspendLayout();
+            panelDataFile_SYP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewOriginalFile_SYP).BeginInit();
+            SuspendLayout();
+            // 
+            // panelInformation_SYP
+            // 
+            panelInformation_SYP.BackColor = SystemColors.ActiveCaption;
+            panelInformation_SYP.Dock = DockStyle.Bottom;
+            panelInformation_SYP.Location = new Point(0, 350);
+            panelInformation_SYP.Name = "panelInformation_SYP";
+            panelInformation_SYP.Size = new Size(800, 100);
+            panelInformation_SYP.TabIndex = 0;
+            // 
+            // panelManagerData_SYP
+            // 
+            panelManagerData_SYP.BackColor = Color.RosyBrown;
+            panelManagerData_SYP.Controls.Add(buttonDone_SYP);
+            panelManagerData_SYP.Dock = DockStyle.Left;
+            panelManagerData_SYP.Location = new Point(0, 0);
+            panelManagerData_SYP.Name = "panelManagerData_SYP";
+            panelManagerData_SYP.Size = new Size(200, 350);
+            panelManagerData_SYP.TabIndex = 1;
+            // 
+            // panelDataFile_SYP
+            // 
+            panelDataFile_SYP.BackColor = Color.Pink;
+            panelDataFile_SYP.Controls.Add(dataGridViewOriginalFile_SYP);
+            panelDataFile_SYP.Dock = DockStyle.Fill;
+            panelDataFile_SYP.Location = new Point(200, 0);
+            panelDataFile_SYP.Name = "panelDataFile_SYP";
+            panelDataFile_SYP.Size = new Size(600, 350);
+            panelDataFile_SYP.TabIndex = 2;
+            // 
+            // dataGridViewOriginalFile_SYP
+            // 
+            dataGridViewOriginalFile_SYP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewOriginalFile_SYP.Dock = DockStyle.Fill;
+            dataGridViewOriginalFile_SYP.Location = new Point(0, 0);
+            dataGridViewOriginalFile_SYP.Name = "dataGridViewOriginalFile_SYP";
+            dataGridViewOriginalFile_SYP.Size = new Size(600, 350);
+            dataGridViewOriginalFile_SYP.TabIndex = 0;
+            // 
+            // splitter1
+            // 
+            splitter1.Location = new Point(200, 0);
+            splitter1.Name = "splitter1";
+            splitter1.Size = new Size(3, 350);
+            splitter1.TabIndex = 3;
+            splitter1.TabStop = false;
+            // 
+            // buttonDone_SYP
+            // 
+            buttonDone_SYP.Location = new Point(40, 53);
+            buttonDone_SYP.Name = "buttonDone_SYP";
+            buttonDone_SYP.Size = new Size(62, 55);
+            buttonDone_SYP.TabIndex = 0;
+            buttonDone_SYP.Text = "button1";
+            buttonDone_SYP.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialogTask_SYP
+            // 
+            openFileDialogTask_SYP.FileName = "openFileDialog1";
+            // 
+            // FormMain
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(splitter1);
+            Controls.Add(panelDataFile_SYP);
+            Controls.Add(panelManagerData_SYP);
+            Controls.Add(panelInformation_SYP);
+            Name = "FormMain";
+            Text = "Form1";
+            panelManagerData_SYP.ResumeLayout(false);
+            panelDataFile_SYP.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewOriginalFile_SYP).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Panel panelInformation_SYP;
+        private Panel panelManagerData_SYP;
+        private Panel panelDataFile_SYP;
+        private Splitter splitter1;
+        private DataGridView dataGridViewOriginalFile_SYP;
+        private Button buttonDone_SYP;
+        private OpenFileDialog openFileDialogTask_SYP;
     }
 }
