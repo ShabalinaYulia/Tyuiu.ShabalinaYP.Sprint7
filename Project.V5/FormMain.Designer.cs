@@ -30,10 +30,11 @@
         {
             panelInformation_SYP = new Panel();
             panelManagerData_SYP = new Panel();
+            buttonOpenFile_SYP = new Button();
+            buttonDone_SYP = new Button();
             panelDataFile_SYP = new Panel();
             dataGridViewOriginalFile_SYP = new DataGridView();
             splitter1 = new Splitter();
-            buttonDone_SYP = new Button();
             openFileDialogTask_SYP = new OpenFileDialog();
             panelManagerData_SYP.SuspendLayout();
             panelDataFile_SYP.SuspendLayout();
@@ -52,12 +53,32 @@
             // panelManagerData_SYP
             // 
             panelManagerData_SYP.BackColor = Color.RosyBrown;
+            panelManagerData_SYP.Controls.Add(buttonOpenFile_SYP);
             panelManagerData_SYP.Controls.Add(buttonDone_SYP);
             panelManagerData_SYP.Dock = DockStyle.Left;
             panelManagerData_SYP.Location = new Point(0, 0);
             panelManagerData_SYP.Name = "panelManagerData_SYP";
             panelManagerData_SYP.Size = new Size(200, 350);
             panelManagerData_SYP.TabIndex = 1;
+            // 
+            // buttonOpenFile_SYP
+            // 
+            buttonOpenFile_SYP.Location = new Point(53, 183);
+            buttonOpenFile_SYP.Name = "buttonOpenFile_SYP";
+            buttonOpenFile_SYP.Size = new Size(75, 23);
+            buttonOpenFile_SYP.TabIndex = 1;
+            buttonOpenFile_SYP.Text = "button1";
+            buttonOpenFile_SYP.UseVisualStyleBackColor = true;
+            buttonOpenFile_SYP.Click += buttonOpenFile;
+            // 
+            // buttonDone_SYP
+            // 
+            buttonDone_SYP.Location = new Point(40, 53);
+            buttonDone_SYP.Name = "buttonDone_SYP";
+            buttonDone_SYP.Size = new Size(62, 55);
+            buttonDone_SYP.TabIndex = 0;
+            buttonDone_SYP.Text = "button1";
+            buttonDone_SYP.UseVisualStyleBackColor = true;
             // 
             // panelDataFile_SYP
             // 
@@ -75,6 +96,7 @@
             dataGridViewOriginalFile_SYP.Dock = DockStyle.Fill;
             dataGridViewOriginalFile_SYP.Location = new Point(0, 0);
             dataGridViewOriginalFile_SYP.Name = "dataGridViewOriginalFile_SYP";
+            dataGridViewOriginalFile_SYP.RowHeadersVisible = false;
             dataGridViewOriginalFile_SYP.Size = new Size(600, 350);
             dataGridViewOriginalFile_SYP.TabIndex = 0;
             // 
@@ -85,15 +107,6 @@
             splitter1.Size = new Size(3, 350);
             splitter1.TabIndex = 3;
             splitter1.TabStop = false;
-            // 
-            // buttonDone_SYP
-            // 
-            buttonDone_SYP.Location = new Point(40, 53);
-            buttonDone_SYP.Name = "buttonDone_SYP";
-            buttonDone_SYP.Size = new Size(62, 55);
-            buttonDone_SYP.TabIndex = 0;
-            buttonDone_SYP.Text = "button1";
-            buttonDone_SYP.UseVisualStyleBackColor = true;
             // 
             // openFileDialogTask_SYP
             // 
@@ -125,5 +138,6 @@
         private DataGridView dataGridViewOriginalFile_SYP;
         private Button buttonDone_SYP;
         private OpenFileDialog openFileDialogTask_SYP;
+        private Button buttonOpenFile_SYP;
     }
 }
