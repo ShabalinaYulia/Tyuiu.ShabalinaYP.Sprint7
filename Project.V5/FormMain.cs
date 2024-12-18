@@ -16,14 +16,21 @@ namespace Project.V5
             {
                 List<string[]> arrayValues = ds.WholesaleBase(openFilePath);
 
-                int rows = arrayValues.GetLength(0);
-                int columns = arrayValues.GetLength(1);
+                dataGridViewOriginalFile_SYP.DataSource = arrayValues;
+                
+            }
+            buttonDone_SYP.Enabled = true;
+        }
+        private void buttonOpenFile_SBI_Click(object sender, EventArgs e)
+        {
+            openFileDialogTask_SYP.Filter = "Значения, разделённые запятыми (*.csv)|*.csv|Все файлы (*.*)|*.*";
+            openFileDialogTask_SYP.ShowDialog();
+            if (File.Exists(openFileDialogTask_SYP.FileName))
+            {
+                openFilePath = openFileDialogTask_SYP.FileName;
+                arrayValues = ds.WholesaleBase(openFilePath);
 
-                dataGridViewOriginalFile_SYP.ColumnCount = columns;
-                dataGridViewOriginalFile_SYP.RowCount = rows;
-                dataGridViewOriginalFile_SYP.ColumnCount = columns;
-                dataGridViewOriginalFile_SYP.RowCount = rows;
-                for (int i = 0; i < columns; i++)
+                for (int i = 0; i<arrayValues.Count; i++)
                 {
                     dataGridViewOriginalFile_SYP.Columns[i].Width = 25;
                     //dataGridViewOutPut_SYP.Columns[i].Width = 25;
@@ -36,7 +43,6 @@ namespace Project.V5
                     }
                 }
             }
-            buttonDone_SYP.Enabled = true;
         }
     }
 }
