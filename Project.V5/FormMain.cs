@@ -11,7 +11,7 @@ namespace Project.V5
         DataService ds = new DataService();
         string openFilePath;
         public List<string[]> arrayValues;
-        private void buttonOpenFile(object sender, EventArgs e)
+        private void buttonOpenFile_SYP_Click(object sender, EventArgs e)
         {
             openFileDialogTask_SYP.Filter = "Значения, разделённые запятыми (*.csv)|*.csv|Все файлы (*.*)|*.*";
 
@@ -30,11 +30,8 @@ namespace Project.V5
                             return;
                         }
                         dataGridViewOriginalFile_SYP.AllowUserToAddRows = false;
-
-                        //Преобразуем массив строк в DataTable
+                        
                         DataTable listDataTable = new DataTable();
-
-                        // Получаем количество столбцов (по первому ряду)
                         if (arrayValues.Count > 0)
                         {
                             int columnCount = arrayValues[0].Length;
@@ -43,8 +40,6 @@ namespace Project.V5
                                 listDataTable.Columns.Add(new DataColumn($"Column {i + 1}", typeof(string)));
                             }
                         }
-
-                        // Заполняем DataTable данными
                         foreach (string[] row in arrayValues)
                         {
                             listDataTable.Rows.Add(row);
@@ -75,14 +70,19 @@ namespace Project.V5
                 }
             }
         }
-        private void buttonOpenFile_SBI_Click(object sender, EventArgs e)
+        private void buttonSaveFile_SBI_Click(object sender, EventArgs e)
         {
-            openFileDialogTask_SYP.Filter = "Значения, разделённые запятыми (*.csv)|*.csv|Все файлы (*.*)|*.*";
-            openFileDialogTask_SYP.ShowDialog();
-            if (File.Exists(openFileDialogTask_SYP.FileName))
+            saveFileDialog_SYP.FileName = "file.csv";
+            saveFileDialog_SYP.InitialDirectory = Directory.GetCurrentDirectory();
+            saveFileDialog_SYP.ShowDialog();
+
+            string path = saveFileDialog_SYP.FileName;
+
+            FileInfo fileInfo = new FileInfo(path);
+            if (fileInfo.Exists)
             {
-                openFilePath = openFileDialogTask_SYP.FileName;
-                arrayValues = ds.WholesaleBase(openFilePath);
+                File.Delete(path);
+            }
 
             string str = "";
             for (int i = 0; i < rows; i++)
@@ -95,8 +95,7 @@ namespace Project.V5
                     }
                     else
                     {
-                        MessageBox.Show("Возникла ошибка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
+                        str += dataGridViewRoutes_SBI.Rows[i].Cells[j].Value;
                     }
                 }
                 File.AppendAllText(path, str + Environment.NewLine);

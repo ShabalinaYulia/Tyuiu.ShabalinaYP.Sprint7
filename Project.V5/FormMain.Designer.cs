@@ -36,6 +36,7 @@
             dataGridViewOriginalFile_SYP = new DataGridView();
             splitter1 = new Splitter();
             openFileDialogTask_SYP = new OpenFileDialog();
+            saveFileDialog_SYP = new SaveFileDialog();
             panelManagerData_SYP.SuspendLayout();
             panelDataFile_SYP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOriginalFile_SYP).BeginInit();
@@ -69,7 +70,7 @@
             buttonOpenFile_SYP.TabIndex = 1;
             buttonOpenFile_SYP.Text = "button1";
             buttonOpenFile_SYP.UseVisualStyleBackColor = true;
-            buttonOpenFile_SYP.Click += buttonOpenFile;
+            buttonOpenFile_SYP.Click += buttonOpenFile_SYP_Click;
             // 
             // buttonDone_SYP
             // 
@@ -139,5 +140,6 @@
         private Button buttonDone_SYP;
         private OpenFileDialog openFileDialogTask_SYP;
         private Button buttonOpenFile_SYP;
+        private SaveFileDialog saveFileDialog_SYP;
     }
 }
