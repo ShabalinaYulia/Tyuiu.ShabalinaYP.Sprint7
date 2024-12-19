@@ -84,14 +84,23 @@ namespace Project.V5
                 openFilePath = openFileDialogTask_SYP.FileName;
                 arrayValues = ds.WholesaleBase(openFilePath);
 
-                for (int i = 0; i < arrayValues.Count; i++)
+            string str = "";
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < COLUMNS; j++)
                 {
-                    if (arrayValues[i].Length < 4 || !int.TryParse(arrayValues[i][0], out _))
+                    if (j != COLUMNS - 1)
+                    {
+                        str += dataGridViewRoutes_SBI.Rows[i].Cells[j].Value + ";";
+                    }
+                    else
                     {
                         MessageBox.Show("Возникла ошибка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }
+                File.AppendAllText(path, str + Environment.NewLine);
+                str = "";
             }
         }
 
