@@ -84,23 +84,6 @@ namespace Project.V5
                 File.Delete(path);
             }
 
-            string str = "";
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < COLUMNS; j++)
-                {
-                    if (j != COLUMNS - 1)
-                    {
-                        str += dataGridViewRoutes_SBI.Rows[i].Cells[j].Value + ";";
-                    }
-                    else
-                    {
-                        str += dataGridViewRoutes_SBI.Rows[i].Cells[j].Value;
-                    }
-                }
-                File.AppendAllText(path, str + Environment.NewLine);
-                str = "";
-            }
         }
 
     }
