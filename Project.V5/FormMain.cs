@@ -9,7 +9,6 @@ namespace Project.V5
             InitializeComponent();
         }
         DataService ds = new DataService();
-        string openFilePath;
         public List<string[]> arrayValues;
         private void buttonOpenFile_SYP_Click(object sender, EventArgs e)
         {
@@ -30,7 +29,7 @@ namespace Project.V5
                             return;
                         }
                         dataGridViewOriginalFile_SYP.AllowUserToAddRows = false;
-                        
+
                         DataTable listDataTable = new DataTable();
                         if (arrayValues.Count > 0)
                         {
@@ -46,13 +45,14 @@ namespace Project.V5
                         }
 
                         dataGridViewOriginalFile_SYP.DataSource = listDataTable;
-                        buttonDone_SYP.Enabled = true;
-                        if(listDataTable.Columns.Count > 0)
+                        buttonSaveFile_SYP.Enabled = true;
+                        if (listDataTable.Columns.Count > 0)
                         {
-                            listDataTable.Columns[0].ColumnName = "Товар";
-                            listDataTable.Columns[1].ColumnName = "Код товара";
-                            listDataTable.Columns[2].ColumnName = "Поставщик";
-                            listDataTable.Columns[3].ColumnName = "Количество на складе";
+                            listDataTable.Columns[0].ColumnName = "№";
+                            listDataTable.Columns[1].ColumnName = "Товар";
+                            listDataTable.Columns[2].ColumnName = "Код товара";
+                            listDataTable.Columns[3].ColumnName = "Поставщик";
+                            listDataTable.Columns[4].ColumnName = "Количество на складе";
                         }
                     }
                     catch (FileNotFoundException ex)
@@ -85,6 +85,6 @@ namespace Project.V5
             }
 
         }
-
+        
     }
 }
