@@ -34,29 +34,29 @@
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             toolStripStatusLabelChabgeData_SYP = new ToolStripStatusLabel();
             panelManagerData_SYP = new Panel();
+            buttonAddtoCard_SYP = new Button();
             buttonOpenFile_SYP = new Button();
             buttonSaveFile_SYP = new Button();
             panelDataFile_SYP = new Panel();
             groupBoxDataFile_SYP = new GroupBox();
             tabControlFile_SYP = new TabControl();
-            tabPage1 = new TabPage();
+            tabPageOriginalFile_SYP = new TabPage();
             dataGridViewOriginalFile_SYP = new DataGridView();
-            tabPage2 = new TabPage();
+            tabPageCardFile_SYP = new TabPage();
+            dataGridViewCard_SYP = new DataGridView();
             splitter1 = new Splitter();
             openFileDialogTask_SYP = new OpenFileDialog();
             saveFileDialog_SYP = new SaveFileDialog();
-            dataGridView1 = new DataGridView();
-            button1 = new Button();
             panelInformation_SYP.SuspendLayout();
             statusStripManageData_SYP.SuspendLayout();
             panelManagerData_SYP.SuspendLayout();
             panelDataFile_SYP.SuspendLayout();
             groupBoxDataFile_SYP.SuspendLayout();
             tabControlFile_SYP.SuspendLayout();
-            tabPage1.SuspendLayout();
+            tabPageOriginalFile_SYP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOriginalFile_SYP).BeginInit();
-            tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            tabPageCardFile_SYP.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCard_SYP).BeginInit();
             SuspendLayout();
             // 
             // panelInformation_SYP
@@ -66,7 +66,7 @@
             panelInformation_SYP.Dock = DockStyle.Top;
             panelInformation_SYP.Location = new Point(0, 0);
             panelInformation_SYP.Name = "panelInformation_SYP";
-            panelInformation_SYP.Size = new Size(800, 35);
+            panelInformation_SYP.Size = new Size(964, 35);
             panelInformation_SYP.TabIndex = 0;
             // 
             // statusStripManageData_SYP
@@ -75,7 +75,7 @@
             statusStripManageData_SYP.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripStatusLabelChabgeData_SYP });
             statusStripManageData_SYP.Location = new Point(0, 0);
             statusStripManageData_SYP.Name = "statusStripManageData_SYP";
-            statusStripManageData_SYP.Size = new Size(800, 35);
+            statusStripManageData_SYP.Size = new Size(964, 35);
             statusStripManageData_SYP.TabIndex = 0;
             statusStripManageData_SYP.Text = "statusStrip1";
             // 
@@ -96,7 +96,7 @@
             // panelManagerData_SYP
             // 
             panelManagerData_SYP.BackColor = Color.RosyBrown;
-            panelManagerData_SYP.Controls.Add(button1);
+            panelManagerData_SYP.Controls.Add(buttonAddtoCard_SYP);
             panelManagerData_SYP.Controls.Add(buttonOpenFile_SYP);
             panelManagerData_SYP.Controls.Add(buttonSaveFile_SYP);
             panelManagerData_SYP.Dock = DockStyle.Left;
@@ -104,6 +104,17 @@
             panelManagerData_SYP.Name = "panelManagerData_SYP";
             panelManagerData_SYP.Size = new Size(200, 415);
             panelManagerData_SYP.TabIndex = 1;
+            // 
+            // buttonAddtoCard_SYP
+            // 
+            buttonAddtoCard_SYP.Enabled = false;
+            buttonAddtoCard_SYP.Image = (Image)resources.GetObject("buttonAddtoCard_SYP.Image");
+            buttonAddtoCard_SYP.Location = new Point(33, 131);
+            buttonAddtoCard_SYP.Name = "buttonAddtoCard_SYP";
+            buttonAddtoCard_SYP.Size = new Size(46, 39);
+            buttonAddtoCard_SYP.TabIndex = 2;
+            buttonAddtoCard_SYP.UseVisualStyleBackColor = true;
+            buttonAddtoCard_SYP.Click += buttonAddtoCard_SYP_Click;
             // 
             // buttonOpenFile_SYP
             // 
@@ -124,6 +135,7 @@
             buttonSaveFile_SYP.Size = new Size(46, 39);
             buttonSaveFile_SYP.TabIndex = 0;
             buttonSaveFile_SYP.UseVisualStyleBackColor = true;
+            buttonSaveFile_SYP.Click += buttonSaveFile_SBI_Click;
             // 
             // panelDataFile_SYP
             // 
@@ -132,7 +144,7 @@
             panelDataFile_SYP.Dock = DockStyle.Fill;
             panelDataFile_SYP.Location = new Point(200, 35);
             panelDataFile_SYP.Name = "panelDataFile_SYP";
-            panelDataFile_SYP.Size = new Size(600, 415);
+            panelDataFile_SYP.Size = new Size(764, 415);
             panelDataFile_SYP.TabIndex = 2;
             // 
             // groupBoxDataFile_SYP
@@ -141,32 +153,32 @@
             groupBoxDataFile_SYP.Dock = DockStyle.Fill;
             groupBoxDataFile_SYP.Location = new Point(0, 0);
             groupBoxDataFile_SYP.Name = "groupBoxDataFile_SYP";
-            groupBoxDataFile_SYP.Size = new Size(600, 415);
+            groupBoxDataFile_SYP.Size = new Size(764, 415);
             groupBoxDataFile_SYP.TabIndex = 1;
             groupBoxDataFile_SYP.TabStop = false;
             groupBoxDataFile_SYP.Text = "Данные";
             // 
             // tabControlFile_SYP
             // 
-            tabControlFile_SYP.Controls.Add(tabPage1);
-            tabControlFile_SYP.Controls.Add(tabPage2);
+            tabControlFile_SYP.Controls.Add(tabPageOriginalFile_SYP);
+            tabControlFile_SYP.Controls.Add(tabPageCardFile_SYP);
             tabControlFile_SYP.Dock = DockStyle.Fill;
             tabControlFile_SYP.Location = new Point(3, 19);
             tabControlFile_SYP.Name = "tabControlFile_SYP";
             tabControlFile_SYP.SelectedIndex = 0;
-            tabControlFile_SYP.Size = new Size(594, 393);
+            tabControlFile_SYP.Size = new Size(758, 393);
             tabControlFile_SYP.TabIndex = 0;
             // 
-            // tabPage1
+            // tabPageOriginalFile_SYP
             // 
-            tabPage1.Controls.Add(dataGridViewOriginalFile_SYP);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(586, 365);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
-            tabPage1.UseVisualStyleBackColor = true;
+            tabPageOriginalFile_SYP.Controls.Add(dataGridViewOriginalFile_SYP);
+            tabPageOriginalFile_SYP.Location = new Point(4, 24);
+            tabPageOriginalFile_SYP.Name = "tabPageOriginalFile_SYP";
+            tabPageOriginalFile_SYP.Padding = new Padding(3);
+            tabPageOriginalFile_SYP.Size = new Size(750, 365);
+            tabPageOriginalFile_SYP.TabIndex = 0;
+            tabPageOriginalFile_SYP.Text = "Оптовая база";
+            tabPageOriginalFile_SYP.UseVisualStyleBackColor = true;
             // 
             // dataGridViewOriginalFile_SYP
             // 
@@ -175,19 +187,29 @@
             dataGridViewOriginalFile_SYP.Location = new Point(3, 3);
             dataGridViewOriginalFile_SYP.Name = "dataGridViewOriginalFile_SYP";
             dataGridViewOriginalFile_SYP.RowHeadersVisible = false;
-            dataGridViewOriginalFile_SYP.Size = new Size(580, 359);
+            dataGridViewOriginalFile_SYP.Size = new Size(744, 359);
             dataGridViewOriginalFile_SYP.TabIndex = 0;
             // 
-            // tabPage2
+            // tabPageCardFile_SYP
             // 
-            tabPage2.Controls.Add(dataGridView1);
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(586, 365);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            tabPageCardFile_SYP.Controls.Add(dataGridViewCard_SYP);
+            tabPageCardFile_SYP.Location = new Point(4, 24);
+            tabPageCardFile_SYP.Name = "tabPageCardFile_SYP";
+            tabPageCardFile_SYP.Padding = new Padding(3);
+            tabPageCardFile_SYP.Size = new Size(750, 365);
+            tabPageCardFile_SYP.TabIndex = 1;
+            tabPageCardFile_SYP.Text = "Корзина";
+            tabPageCardFile_SYP.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewCard_SYP
+            // 
+            dataGridViewCard_SYP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCard_SYP.Dock = DockStyle.Fill;
+            dataGridViewCard_SYP.Location = new Point(3, 3);
+            dataGridViewCard_SYP.Name = "dataGridViewCard_SYP";
+            dataGridViewCard_SYP.RowHeadersVisible = false;
+            dataGridViewCard_SYP.Size = new Size(744, 359);
+            dataGridViewCard_SYP.TabIndex = 0;
             // 
             // splitter1
             // 
@@ -201,29 +223,11 @@
             // 
             openFileDialogTask_SYP.FileName = "openFileDialog1";
             // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(3, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(580, 359);
-            dataGridView1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(33, 131);
-            button1.Name = "button1";
-            button1.Size = new Size(46, 39);
-            button1.TabIndex = 2;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(964, 450);
             Controls.Add(splitter1);
             Controls.Add(panelDataFile_SYP);
             Controls.Add(panelManagerData_SYP);
@@ -238,10 +242,10 @@
             panelDataFile_SYP.ResumeLayout(false);
             groupBoxDataFile_SYP.ResumeLayout(false);
             tabControlFile_SYP.ResumeLayout(false);
-            tabPage1.ResumeLayout(false);
+            tabPageOriginalFile_SYP.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewOriginalFile_SYP).EndInit();
-            tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            tabPageCardFile_SYP.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCard_SYP).EndInit();
             ResumeLayout(false);
         }
 
@@ -260,10 +264,10 @@
         private ToolStripStatusLabel toolStripStatusLabelChabgeData_SYP;
         private GroupBox groupBoxDataFile_SYP;
         private TabControl tabControlFile_SYP;
-        private TabPage tabPage2;
-        private TabPage tabPage1;
+        private TabPage tabPageCardFile_SYP;
+        private TabPage tabPageOriginalFile_SYP;
         private DataGridView dataGridViewOriginalFile_SYP;
-        private DataGridView dataGridView1;
-        private Button button1;
+        private DataGridView dataGridViewCard_SYP;
+        private Button buttonAddtoCard_SYP;
     }
 }
