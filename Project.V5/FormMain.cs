@@ -7,8 +7,8 @@ namespace Project.V5
         DataService ds = new DataService();
         public List<string[]> arrayValues;
         private DataTable selectedItemsTable = new DataTable();
-        private List<string[]> selectedItems = new List<string[]>();
         private List<string[]> selectedRows = new List<string[]>();
+        private int lastAddedRowIndex = -1;
         public FormMain()
         {
             InitializeComponent();
@@ -18,10 +18,9 @@ namespace Project.V5
             dataGridViewOriginalFile_SYP.MultiSelect = true;
             dataGridViewCard_SYP.MultiSelect = false;
 
-            dataGridViewOriginalFile_SYP.SelectionChanged += dataGridViewOriginalFile_SYP_SelectionChanged;
-            buttonAddtoCard_SYP.Click += buttonAddtoCard_SYP_Click; // Добавляем обработчик на нажатие кнопки "Добавить"
+            dataGridViewOriginalFile_SYP.SelectionChanged += dataGridViewSource_SelectionChanged;
             dataGridViewCard_SYP.DataSource = selectedItemsTable;
-        }      
+        }
 
         private void buttonOpenFile_SYP_Click(object sender, EventArgs e)
         {
@@ -130,29 +129,32 @@ namespace Project.V5
 
 
         }
-        private void dataGridViewOriginalFile_SYP_SelectionChanged(object sender, EventArgs e)
+        private void dataGridViewSource_SelectionChanged(object sender, EventArgs e)
         {
-            selectedRows.Clear();
+            selectedRows.Clear(); //Очищаем старые данные
             foreach (DataGridViewRow row in dataGridViewOriginalFile_SYP.SelectedRows)
             {
-                if (row.IsNewRow) continue; // Пропускаем строку добавления
+                if (row.IsNewRow) continue;
                 string[] values = new string[row.Cells.Count];
                 for (int i = 0; i < row.Cells.Count; i++)
                 {
                     values[i] = row.Cells[i].Value?.ToString();
+                    
                 }
-                selectedRows.Add(values);
+                selectedRows.Add(values); // Добавляем новый массив строк
             }
         }
         private void buttonAddtoCard_SYP_Click(object sender, EventArgs e)
         {
-            if (selectedRows.Count > 0)
+            foreach (string[] row in selectedRows)
             {
-                foreach (string[] row in selectedRows)
-                {
-                    selectedItemsTable.Rows.Add(row);
-                }
+                string product = row[4].ToString();
+                AddorUpdate(product);
             }
         }
-    }
+        private void AddorUpdate(string productname, int count) 
+        {
+            count = 0;
+        }
+    }     
 }
