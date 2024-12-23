@@ -131,7 +131,7 @@ namespace Project.V5
         }
         private void dataGridViewSource_SelectionChanged(object sender, EventArgs e)
         {
-            selectedRows.Clear(); //ќчищаем старые данные
+            selectedRows.Clear(); 
             foreach (DataGridViewRow row in dataGridViewOriginalFile_SYP.SelectedRows)
             {
                 if (row.IsNewRow) continue;
@@ -148,13 +148,26 @@ namespace Project.V5
         {
             foreach (string[] row in selectedRows)
             {
-                string product = row[4].ToString();
+                string product = row[2].ToString();
                 AddorUpdate(product);
             }
         }
-        private void AddorUpdate(string productname, int count) 
+        private void AddorUpdate(string productname) 
         {
-            count = 0;
+            if (dataGridViewCard_SYP.Rows[2].Cells[1].Value?.ToString() == productname) // ѕровер€ем, что перва€ €чейка третьей строки равна productName
+            {
+                if (dataGridViewCard_SYP.Rows.Count > 4) // ѕровер€ем наличие п€той строки
+                {
+                    if (int.TryParse(dataGridViewCard_SYP.Rows[4].Cells[1].Value?.ToString(), out int count)) //пытаемс€ преобразовать значение второй €чейки п€той строки в int
+                    {
+                        dataGridViewCard_SYP.Rows[4].Cells[1].Value = count + 1; //прибавл€ем 1 к count и записываем в первую €чейку п€той строки.
+                    }
+                    else
+                    {
+                        dataGridViewCard_SYP.Rows[4].Cells[1].Value = 1; //если не удалось преобразовать, устанавливаем значение 1
+                    }
+                }
+            }
         }
     }     
 }
