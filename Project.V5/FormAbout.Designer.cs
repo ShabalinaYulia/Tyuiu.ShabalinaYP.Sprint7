@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            button1 = new Button();
+            buttonOK_SYP = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -53,24 +53,25 @@
             label1.TabIndex = 1;
             label1.Text = resources.GetString("label1.Text");
             // 
-            // button1
+            // buttonOK_SYP
             // 
-            button1.Location = new Point(478, 243);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Ок";
-            button1.UseVisualStyleBackColor = true;
+            buttonOK_SYP.Location = new Point(478, 243);
+            buttonOK_SYP.Name = "buttonOK_SYP";
+            buttonOK_SYP.Size = new Size(75, 23);
+            buttonOK_SYP.TabIndex = 2;
+            buttonOK_SYP.Text = "Ок";
+            buttonOK_SYP.UseVisualStyleBackColor = true;
+            buttonOK_SYP.Click += buttonOK_SYP_Click;
             // 
-            // About
+            // FormAbout
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(587, 313);
-            Controls.Add(button1);
+            Controls.Add(buttonOK_SYP);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
-            Name = "About";
+            Name = "FormAbout";
             Text = "О программе";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -81,6 +82,6 @@
 
         private PictureBox pictureBox1;
         private Label label1;
-        private Button button1;
+        private Button buttonOK_SYP;
     }
 }

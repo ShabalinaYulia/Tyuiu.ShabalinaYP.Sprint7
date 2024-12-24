@@ -8,7 +8,6 @@ namespace Project.V5
         public List<string[]> arrayValues;
         private DataTable selectedItemsTable = new DataTable();
         private List<string[]> selectedRows = new List<string[]>();
-        private int lastAddedRowIndex = -1;
         public FormMain()
         {
             InitializeComponent();
@@ -16,10 +15,10 @@ namespace Project.V5
             saveFileDialog_SYP.Filter = "Значения, разделённые запятыми (*.csv)|*.csv|Все файлы (*.*)|*.*";
             dataGridViewOriginalFile_SYP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewOriginalFile_SYP.MultiSelect = true;
-            dataGridViewCard_SYP.MultiSelect = false;
+            dataGridViewCompletedOrders_SYP.MultiSelect = false;
 
             dataGridViewOriginalFile_SYP.SelectionChanged += dataGridViewSource_SelectionChanged;
-            dataGridViewCard_SYP.DataSource = selectedItemsTable;
+            dataGridViewCompletedOrders_SYP.DataSource = selectedItemsTable;
         }
 
         private void buttonOpenFile_SYP_Click(object sender, EventArgs e)
@@ -27,7 +26,6 @@ namespace Project.V5
             if (openFileDialogTask_SYP.ShowDialog() == DialogResult.OK)
             {
                 string openFilePath = openFileDialogTask_SYP.FileName;
-
                 if (!string.IsNullOrEmpty(openFilePath))
                 {
                     try
@@ -56,20 +54,21 @@ namespace Project.V5
 
                         dataGridViewOriginalFile_SYP.DataSource = listDataTable;
                         buttonSaveFile_SYP.Enabled = true;
-                        buttonAddtoCard_SYP.Enabled = true;
+                        buttonAddCompletedOrders_SYP.Enabled = true;
+                        dataGridViewCompletedOrders_SYP.AllowUserToAddRows = false;
                         if (listDataTable.Columns.Count > 0)
                         {
                             listDataTable.Columns[0].ColumnName = "№";
                             listDataTable.Columns[2].ColumnName = "Товар";
                             listDataTable.Columns[1].ColumnName = "Код товара";
                             listDataTable.Columns[3].ColumnName = "Поставщик";
-                            listDataTable.Columns[4].ColumnName = "Количество на складе";
+                            listDataTable.Columns[4].ColumnName = "Количество";
+                            listDataTable.Columns[5].ColumnName = "Дата заказа";
                             selectedItemsTable = listDataTable.Clone();
-                            if (selectedItemsTable.Columns.Count > 0) 
-                            {
-                                selectedItemsTable.Columns[4].ColumnName = "Количество";
-                            };
-                            dataGridViewCard_SYP.DataSource = selectedItemsTable;
+                            
+                            dataGridViewCompletedOrders_SYP.DataSource = selectedItemsTable;
+                            
+
 
                         }
                     }
@@ -88,46 +87,74 @@ namespace Project.V5
                 }
             }
         }
-        private void buttonSaveFile_SBI_Click(object sender, EventArgs e)
+        private void buttonSaveFile_SYP_Click(object sender, EventArgs e)
         {
-            saveFileDialog_SYP.FileName = "Корзина.csv";
+            saveFileDialog_SYP.FileName = "Выполненные заказы.csv";
             saveFileDialog_SYP.InitialDirectory = Directory.GetCurrentDirectory();
             saveFileDialog_SYP.ShowDialog();
 
             string path = saveFileDialog_SYP.FileName;
-
             FileInfo fileInfo = new FileInfo(path);
             if (fileInfo.Exists)
             {
                 File.Delete(path);
             }
-            int row = this.dataGridViewCard_SYP.RowCount;
-            int column = this.dataGridViewCard_SYP.ColumnCount;
+            int rows = dataGridViewCompletedOrders_SYP.RowCount;
+            int columns = dataGridViewCompletedOrders_SYP.ColumnCount;
             string str = "";
-            if (this.saveFileDialog_SYP.ShowDialog() == DialogResult.OK)
+            for (int i = 0; i < rows; i++)
             {
-                for (int i = 0; i < row; i++)
+                for (int j = 0; j < columns; j++)
                 {
-                    for (int j = 0; j < column; j++)
+                    if (j != columns - 1)
                     {
-                        if (this.dataGridViewCard_SYP.Rows[i].Cells[j].Style.BackColor == Color.OrangeRed) break;
-
-                        if (j == column - 1)
-                        {
-                            str += this.dataGridViewCard_SYP.Rows[i].Cells[j].Value.ToString();
-                        }
-                        else
-                        {
-                            str += this.dataGridViewCard_SYP.Rows[i].Cells[j].Value.ToString() + ";";
-                        }
+                        str += dataGridViewCompletedOrders_SYP.Rows[i].Cells[j].Value + ";";
                     }
-                    File.AppendAllText(path, str + Environment.NewLine);
-                    str = "";
+                    else
+                    {
+                        str += dataGridViewCompletedOrders_SYP.Rows[i].Cells[j].Value;
+                    }
                 }
+                File.AppendAllText(path, str + Environment.NewLine);
+                str = "";
             }
+        }
+        private void buttonChangeFile_SYP_Click(object sender, EventArgs e)
+        {
+            saveFileDialog_SYP.FileName = "wholesale base.csv";
+            saveFileDialog_SYP.InitialDirectory = Directory.GetCurrentDirectory();
+            saveFileDialog_SYP.ShowDialog();
 
-
-
+            string path = saveFileDialog_SYP.FileName;
+            FileInfo fileInfo = new FileInfo(path);
+            if (fileInfo.Exists)
+            {
+                File.Delete(path);
+            }
+            int rows = dataGridViewOriginalFile_SYP.RowCount;
+            int columns = dataGridViewOriginalFile_SYP.ColumnCount;
+            string str = "";
+            for (int i = 0; i < rows; i++)
+            {
+                for (int j = 0; j < columns; j++)
+                {
+                    if (j != columns - 1)
+                    {
+                        str += dataGridViewOriginalFile_SYP.Rows[i].Cells[j].Value + ";";
+                    }
+                    else
+                    {
+                        str += dataGridViewOriginalFile_SYP.Rows[i].Cells[j].Value;
+                    }
+                }
+                File.AppendAllText(path, str + Environment.NewLine);
+                str = "";
+            }
+        }
+        private void ToolStripMenuItemAbout_SYP_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
         }
         private void dataGridViewSource_SelectionChanged(object sender, EventArgs e)
         {
@@ -143,31 +170,67 @@ namespace Project.V5
                 }
                 selectedRows.Add(values); // Добавляем новый массив строк
             }
+
         }
-        private void buttonAddtoCard_SYP_Click(object sender, EventArgs e)
+        private void buttonAddCompletedOrders_SYP_Click(object sender, EventArgs e)
         {
-            foreach (string[] row in selectedRows)
+            if (selectedRows == null || selectedRows.Count == 0)
             {
-                string product = row[2].ToString();
-                AddorUpdate(product);
+                MessageBox.Show("Нет выделенных строк для добавления.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                foreach (string[] Rows in selectedRows)
+                {
+                    selectedItemsTable.Rows.Add(Rows);
+                }
+
+            };            
+            buttonDeleteCompletedOrders_SYP.Enabled = true;
+        }
+        
+        private void buttonDeleteCompletedOrders_SYP_Click(object sender, EventArgs e)
+        {
+            if (selectedRows == null || selectedRows.Count == 0)
+            {
+                MessageBox.Show("Нет выделенных строк для добавления.", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else
+            {
+                foreach(DataGridViewRow Row in dataGridViewCompletedOrders_SYP.SelectedRows)
+                {
+                    dataGridViewCompletedOrders_SYP.Rows.Remove(Row);
+                }                  
+                    
             }
         }
-        private void AddorUpdate(string productname) 
+        private void buttonStatics_SYP_Click(object obj, EventArgs e)
         {
-            if (dataGridViewCard_SYP.Rows[2].Cells[1].Value?.ToString() == productname) // Проверяем, что первая ячейка третьей строки равна productName
+            FormStatics formStatics = new FormStatics();
+            formStatics.ShowDialog();
+        }
+        private void buttonSearch_SBI_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(textBoxSearch_SYP.Text, out int number))
             {
-                if (dataGridViewCard_SYP.Rows.Count > 4) // Проверяем наличие пятой строки
+                DataGridView dataGrid = tabControlFile_SYP.SelectedIndex == 0 ? dataGridViewOriginalFile_SYP : dataGridViewCompletedOrders_SYP;
+                foreach (DataGridViewRow row in dataGrid.Rows)
                 {
-                    if (int.TryParse(dataGridViewCard_SYP.Rows[4].Cells[1].Value?.ToString(), out int count)) //пытаемся преобразовать значение второй ячейки пятой строки в int
+                    if (Convert.ToInt32(row.Cells[0].Value) != number)
                     {
-                        dataGridViewCard_SYP.Rows[4].Cells[1].Value = count + 1; //прибавляем 1 к count и записываем в первую ячейку пятой строки.
-                    }
-                    else
-                    {
-                        dataGridViewCard_SYP.Rows[4].Cells[1].Value = 1; //если не удалось преобразовать, устанавливаем значение 1
+                        dataGrid.Rows.Remove(row);
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
-    }     
+
+    
+    }
 }

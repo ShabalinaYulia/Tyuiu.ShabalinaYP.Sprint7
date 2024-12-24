@@ -30,98 +30,188 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             panelInformation_SYP = new Panel();
-            statusStripManageData_SYP = new StatusStrip();
-            toolStripStatusLabel1 = new ToolStripStatusLabel();
-            toolStripStatusLabelChabgeData_SYP = new ToolStripStatusLabel();
+            menuStrip1 = new MenuStrip();
+            ToolStripMenuItem = new ToolStripMenuItem();
+            ToolStripMenuItemGuide_SYP = new ToolStripMenuItem();
+            ToolStripMenuItemAbout_SYP = new ToolStripMenuItem();
+            ToolStripMenuItemFile_SYP = new ToolStripMenuItem();
+            сохранитьToolStripMenuItem1 = new ToolStripMenuItem();
+            ToolStripMenuItemOpenNewFile_SYP = new ToolStripMenuItem();
             panelManagerData_SYP = new Panel();
-            buttonAddtoCard_SYP = new Button();
+            button1 = new Button();
+            buttonDeleteCompletedOrders_SYP = new Button();
+            label1 = new Label();
+            buttonAddCompletedOrders_SYP = new Button();
+            textBoxSearch_SYP = new TextBox();
+            groupBox1 = new GroupBox();
             buttonOpenFile_SYP = new Button();
             buttonSaveFile_SYP = new Button();
+            groupBox2 = new GroupBox();
             panelDataFile_SYP = new Panel();
             groupBoxDataFile_SYP = new GroupBox();
             tabControlFile_SYP = new TabControl();
             tabPageOriginalFile_SYP = new TabPage();
             dataGridViewOriginalFile_SYP = new DataGridView();
             tabPageCardFile_SYP = new TabPage();
-            dataGridViewCard_SYP = new DataGridView();
-            splitter1 = new Splitter();
+            dataGridViewCompletedOrders_SYP = new DataGridView();
             openFileDialogTask_SYP = new OpenFileDialog();
             saveFileDialog_SYP = new SaveFileDialog();
             panelInformation_SYP.SuspendLayout();
-            statusStripManageData_SYP.SuspendLayout();
+            menuStrip1.SuspendLayout();
             panelManagerData_SYP.SuspendLayout();
+            groupBox1.SuspendLayout();
             panelDataFile_SYP.SuspendLayout();
             groupBoxDataFile_SYP.SuspendLayout();
             tabControlFile_SYP.SuspendLayout();
             tabPageOriginalFile_SYP.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewOriginalFile_SYP).BeginInit();
             tabPageCardFile_SYP.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewCard_SYP).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCompletedOrders_SYP).BeginInit();
             SuspendLayout();
             // 
             // panelInformation_SYP
             // 
             panelInformation_SYP.BackColor = SystemColors.ActiveCaption;
-            panelInformation_SYP.Controls.Add(statusStripManageData_SYP);
+            panelInformation_SYP.Controls.Add(menuStrip1);
             panelInformation_SYP.Dock = DockStyle.Top;
             panelInformation_SYP.Location = new Point(0, 0);
             panelInformation_SYP.Name = "panelInformation_SYP";
             panelInformation_SYP.Size = new Size(964, 35);
             panelInformation_SYP.TabIndex = 0;
             // 
-            // statusStripManageData_SYP
+            // menuStrip1
             // 
-            statusStripManageData_SYP.Dock = DockStyle.Fill;
-            statusStripManageData_SYP.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1, toolStripStatusLabelChabgeData_SYP });
-            statusStripManageData_SYP.Location = new Point(0, 0);
-            statusStripManageData_SYP.Name = "statusStripManageData_SYP";
-            statusStripManageData_SYP.Size = new Size(964, 35);
-            statusStripManageData_SYP.TabIndex = 0;
-            statusStripManageData_SYP.Text = "statusStrip1";
+            menuStrip1.Dock = DockStyle.Fill;
+            menuStrip1.Items.AddRange(new ToolStripItem[] { ToolStripMenuItem, ToolStripMenuItemFile_SYP });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(964, 35);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
             // 
-            // toolStripStatusLabel1
+            // ToolStripMenuItem
             // 
-            toolStripStatusLabel1.BackColor = SystemColors.Control;
-            toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            toolStripStatusLabel1.Size = new Size(118, 30);
-            toolStripStatusLabel1.Text = "toolStripStatusLabel1";
+            ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ToolStripMenuItemGuide_SYP, ToolStripMenuItemAbout_SYP });
+            ToolStripMenuItem.Name = "ToolStripMenuItem";
+            ToolStripMenuItem.Size = new Size(94, 31);
+            ToolStripMenuItem.Text = "О программе";
             // 
-            // toolStripStatusLabelChabgeData_SYP
+            // ToolStripMenuItemGuide_SYP
             // 
-            toolStripStatusLabelChabgeData_SYP.BackColor = SystemColors.ButtonFace;
-            toolStripStatusLabelChabgeData_SYP.Name = "toolStripStatusLabelChabgeData_SYP";
-            toolStripStatusLabelChabgeData_SYP.Size = new Size(118, 30);
-            toolStripStatusLabelChabgeData_SYP.Text = "toolStripStatusLabel2";
+            ToolStripMenuItemGuide_SYP.Name = "ToolStripMenuItemGuide_SYP";
+            ToolStripMenuItemGuide_SYP.Size = new Size(143, 22);
+            ToolStripMenuItemGuide_SYP.Text = "Руководство";
+            ToolStripMenuItemGuide_SYP.Click += buttonStatics_SYP_Click;
+            // 
+            // ToolStripMenuItemAbout_SYP
+            // 
+            ToolStripMenuItemAbout_SYP.Name = "ToolStripMenuItemAbout_SYP";
+            ToolStripMenuItemAbout_SYP.Size = new Size(143, 22);
+            ToolStripMenuItemAbout_SYP.Text = "Справка";
+            ToolStripMenuItemAbout_SYP.Click += ToolStripMenuItemAbout_SYP_Click;
+            // 
+            // ToolStripMenuItemFile_SYP
+            // 
+            ToolStripMenuItemFile_SYP.DropDownItems.AddRange(new ToolStripItem[] { сохранитьToolStripMenuItem1, ToolStripMenuItemOpenNewFile_SYP });
+            ToolStripMenuItemFile_SYP.Name = "ToolStripMenuItemFile_SYP";
+            ToolStripMenuItemFile_SYP.Size = new Size(48, 31);
+            ToolStripMenuItemFile_SYP.Text = "Файл";
+            // 
+            // сохранитьToolStripMenuItem1
+            // 
+            сохранитьToolStripMenuItem1.Name = "сохранитьToolStripMenuItem1";
+            сохранитьToolStripMenuItem1.Size = new Size(196, 22);
+            сохранитьToolStripMenuItem1.Text = "Сохранить изменения";
+            сохранитьToolStripMenuItem1.Click += buttonChangeFile_SYP_Click;
+            // 
+            // ToolStripMenuItemOpenNewFile_SYP
+            // 
+            ToolStripMenuItemOpenNewFile_SYP.Name = "ToolStripMenuItemOpenNewFile_SYP";
+            ToolStripMenuItemOpenNewFile_SYP.Size = new Size(196, 22);
+            ToolStripMenuItemOpenNewFile_SYP.Text = "Открыть новый файл";
+            ToolStripMenuItemOpenNewFile_SYP.Click += buttonOpenFile_SYP_Click;
             // 
             // panelManagerData_SYP
             // 
             panelManagerData_SYP.BackColor = Color.RosyBrown;
-            panelManagerData_SYP.Controls.Add(buttonAddtoCard_SYP);
-            panelManagerData_SYP.Controls.Add(buttonOpenFile_SYP);
-            panelManagerData_SYP.Controls.Add(buttonSaveFile_SYP);
+            panelManagerData_SYP.Controls.Add(button1);
+            panelManagerData_SYP.Controls.Add(buttonDeleteCompletedOrders_SYP);
+            panelManagerData_SYP.Controls.Add(label1);
+            panelManagerData_SYP.Controls.Add(buttonAddCompletedOrders_SYP);
+            panelManagerData_SYP.Controls.Add(textBoxSearch_SYP);
+            panelManagerData_SYP.Controls.Add(groupBox1);
+            panelManagerData_SYP.Controls.Add(groupBox2);
             panelManagerData_SYP.Dock = DockStyle.Left;
             panelManagerData_SYP.Location = new Point(0, 35);
             panelManagerData_SYP.Name = "panelManagerData_SYP";
             panelManagerData_SYP.Size = new Size(200, 415);
             panelManagerData_SYP.TabIndex = 1;
             // 
-            // buttonAddtoCard_SYP
+            // button1
             // 
-            buttonAddtoCard_SYP.Enabled = false;
-            buttonAddtoCard_SYP.Image = (Image)resources.GetObject("buttonAddtoCard_SYP.Image");
-            buttonAddtoCard_SYP.Location = new Point(33, 131);
-            buttonAddtoCard_SYP.Name = "buttonAddtoCard_SYP";
-            buttonAddtoCard_SYP.Size = new Size(46, 39);
-            buttonAddtoCard_SYP.TabIndex = 2;
-            buttonAddtoCard_SYP.UseVisualStyleBackColor = true;
-            buttonAddtoCard_SYP.Click += buttonAddtoCard_SYP_Click;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(3, 114);
+            button1.Name = "button1";
+            button1.Size = new Size(42, 41);
+            button1.TabIndex = 4;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += buttonSearch_SBI_Click;
+            // 
+            // buttonDeleteCompletedOrders_SYP
+            // 
+            buttonDeleteCompletedOrders_SYP.Enabled = false;
+            buttonDeleteCompletedOrders_SYP.Image = (Image)resources.GetObject("buttonDeleteCompletedOrders_SYP.Image");
+            buttonDeleteCompletedOrders_SYP.Location = new Point(72, 246);
+            buttonDeleteCompletedOrders_SYP.Name = "buttonDeleteCompletedOrders_SYP";
+            buttonDeleteCompletedOrders_SYP.Size = new Size(57, 51);
+            buttonDeleteCompletedOrders_SYP.TabIndex = 3;
+            buttonDeleteCompletedOrders_SYP.UseVisualStyleBackColor = true;
+            buttonDeleteCompletedOrders_SYP.Click += buttonDeleteCompletedOrders_SYP_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(51, 111);
+            label1.Name = "label1";
+            label1.Size = new Size(143, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Введите название товара";
+            // 
+            // buttonAddCompletedOrders_SYP
+            // 
+            buttonAddCompletedOrders_SYP.Enabled = false;
+            buttonAddCompletedOrders_SYP.Image = (Image)resources.GetObject("buttonAddCompletedOrders_SYP.Image");
+            buttonAddCompletedOrders_SYP.Location = new Point(9, 246);
+            buttonAddCompletedOrders_SYP.Name = "buttonAddCompletedOrders_SYP";
+            buttonAddCompletedOrders_SYP.Size = new Size(57, 51);
+            buttonAddCompletedOrders_SYP.TabIndex = 2;
+            buttonAddCompletedOrders_SYP.UseVisualStyleBackColor = true;
+            buttonAddCompletedOrders_SYP.Click += buttonAddCompletedOrders_SYP_Click;
+            // 
+            // textBoxSearch_SYP
+            // 
+            textBoxSearch_SYP.Location = new Point(51, 132);
+            textBoxSearch_SYP.Name = "textBoxSearch_SYP";
+            textBoxSearch_SYP.Size = new Size(143, 23);
+            textBoxSearch_SYP.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(buttonOpenFile_SYP);
+            groupBox1.Controls.Add(buttonSaveFile_SYP);
+            groupBox1.Location = new Point(3, 22);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(191, 86);
+            groupBox1.TabIndex = 4;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
             // 
             // buttonOpenFile_SYP
             // 
             buttonOpenFile_SYP.Image = (Image)resources.GetObject("buttonOpenFile_SYP.Image");
-            buttonOpenFile_SYP.Location = new Point(33, 43);
+            buttonOpenFile_SYP.Location = new Point(6, 24);
             buttonOpenFile_SYP.Name = "buttonOpenFile_SYP";
-            buttonOpenFile_SYP.Size = new Size(46, 39);
+            buttonOpenFile_SYP.Size = new Size(57, 51);
             buttonOpenFile_SYP.TabIndex = 1;
             buttonOpenFile_SYP.UseVisualStyleBackColor = true;
             buttonOpenFile_SYP.Click += buttonOpenFile_SYP_Click;
@@ -130,12 +220,21 @@
             // 
             buttonSaveFile_SYP.Enabled = false;
             buttonSaveFile_SYP.Image = (Image)resources.GetObject("buttonSaveFile_SYP.Image");
-            buttonSaveFile_SYP.Location = new Point(107, 43);
+            buttonSaveFile_SYP.Location = new Point(72, 24);
             buttonSaveFile_SYP.Name = "buttonSaveFile_SYP";
-            buttonSaveFile_SYP.Size = new Size(46, 39);
+            buttonSaveFile_SYP.Size = new Size(57, 51);
             buttonSaveFile_SYP.TabIndex = 0;
             buttonSaveFile_SYP.UseVisualStyleBackColor = true;
-            buttonSaveFile_SYP.Click += buttonSaveFile_SBI_Click;
+            buttonSaveFile_SYP.Click += buttonSaveFile_SYP_Click;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Location = new Point(0, 218);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(200, 100);
+            groupBox2.TabIndex = 5;
+            groupBox2.TabStop = false;
+            groupBox2.Text = "groupBox2";
             // 
             // panelDataFile_SYP
             // 
@@ -192,32 +291,25 @@
             // 
             // tabPageCardFile_SYP
             // 
-            tabPageCardFile_SYP.Controls.Add(dataGridViewCard_SYP);
+            tabPageCardFile_SYP.Controls.Add(dataGridViewCompletedOrders_SYP);
             tabPageCardFile_SYP.Location = new Point(4, 24);
             tabPageCardFile_SYP.Name = "tabPageCardFile_SYP";
             tabPageCardFile_SYP.Padding = new Padding(3);
             tabPageCardFile_SYP.Size = new Size(750, 365);
             tabPageCardFile_SYP.TabIndex = 1;
-            tabPageCardFile_SYP.Text = "Корзина";
+            tabPageCardFile_SYP.Text = "Доставленные заказы";
             tabPageCardFile_SYP.UseVisualStyleBackColor = true;
             // 
-            // dataGridViewCard_SYP
+            // dataGridViewCompletedOrders_SYP
             // 
-            dataGridViewCard_SYP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCard_SYP.Dock = DockStyle.Fill;
-            dataGridViewCard_SYP.Location = new Point(3, 3);
-            dataGridViewCard_SYP.Name = "dataGridViewCard_SYP";
-            dataGridViewCard_SYP.RowHeadersVisible = false;
-            dataGridViewCard_SYP.Size = new Size(744, 359);
-            dataGridViewCard_SYP.TabIndex = 0;
-            // 
-            // splitter1
-            // 
-            splitter1.Location = new Point(200, 35);
-            splitter1.Name = "splitter1";
-            splitter1.Size = new Size(3, 415);
-            splitter1.TabIndex = 3;
-            splitter1.TabStop = false;
+            dataGridViewCompletedOrders_SYP.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCompletedOrders_SYP.Dock = DockStyle.Fill;
+            dataGridViewCompletedOrders_SYP.Location = new Point(3, 3);
+            dataGridViewCompletedOrders_SYP.Name = "dataGridViewCompletedOrders_SYP";
+            dataGridViewCompletedOrders_SYP.RowHeadersVisible = false;
+            dataGridViewCompletedOrders_SYP.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridViewCompletedOrders_SYP.Size = new Size(744, 359);
+            dataGridViewCompletedOrders_SYP.TabIndex = 0;
             // 
             // openFileDialogTask_SYP
             // 
@@ -228,24 +320,26 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(964, 450);
-            Controls.Add(splitter1);
             Controls.Add(panelDataFile_SYP);
             Controls.Add(panelManagerData_SYP);
             Controls.Add(panelInformation_SYP);
+            MainMenuStrip = menuStrip1;
             Name = "FormMain";
             Text = "Form1";
             panelInformation_SYP.ResumeLayout(false);
             panelInformation_SYP.PerformLayout();
-            statusStripManageData_SYP.ResumeLayout(false);
-            statusStripManageData_SYP.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             panelManagerData_SYP.ResumeLayout(false);
+            panelManagerData_SYP.PerformLayout();
+            groupBox1.ResumeLayout(false);
             panelDataFile_SYP.ResumeLayout(false);
             groupBoxDataFile_SYP.ResumeLayout(false);
             tabControlFile_SYP.ResumeLayout(false);
             tabPageOriginalFile_SYP.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewOriginalFile_SYP).EndInit();
             tabPageCardFile_SYP.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridViewCard_SYP).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewCompletedOrders_SYP).EndInit();
             ResumeLayout(false);
         }
 
@@ -254,20 +348,29 @@
         private Panel panelInformation_SYP;
         private Panel panelManagerData_SYP;
         private Panel panelDataFile_SYP;
-        private Splitter splitter1;
         private Button buttonSaveFile_SYP;
         private OpenFileDialog openFileDialogTask_SYP;
         private Button buttonOpenFile_SYP;
         private SaveFileDialog saveFileDialog_SYP;
-        private StatusStrip statusStripManageData_SYP;
-        private ToolStripStatusLabel toolStripStatusLabel1;
-        private ToolStripStatusLabel toolStripStatusLabelChabgeData_SYP;
         private GroupBox groupBoxDataFile_SYP;
         private TabControl tabControlFile_SYP;
         private TabPage tabPageCardFile_SYP;
         private TabPage tabPageOriginalFile_SYP;
         private DataGridView dataGridViewOriginalFile_SYP;
-        private DataGridView dataGridViewCard_SYP;
-        private Button buttonAddtoCard_SYP;
+        private DataGridView dataGridViewCompletedOrders_SYP;
+        private Button buttonAddCompletedOrders_SYP;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem ToolStripMenuItem;
+        private ToolStripMenuItem ToolStripMenuItemGuide_SYP;
+        private ToolStripMenuItem ToolStripMenuItemAbout_SYP;
+        private Button buttonDeleteCompletedOrders_SYP;
+        private ToolStripMenuItem ToolStripMenuItemFile_SYP;
+        private ToolStripMenuItem сохранитьToolStripMenuItem1;
+        private ToolStripMenuItem ToolStripMenuItemOpenNewFile_SYP;
+        private GroupBox groupBox1;
+        private Button button1;
+        private Label label1;
+        private TextBox textBoxSearch_SYP;
+        private GroupBox groupBox2;
     }
 }

@@ -10,15 +10,11 @@ using System.Windows.Forms;
 
 namespace Project.V5
 {
-    public partial class FormAbout : Form
+    public partial class FormGuide : Form
     {
-        public FormAbout()
+        public FormGuide()
         {
             InitializeComponent();
-        }
-        private void buttonOK_SYP_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }
