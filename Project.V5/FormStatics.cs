@@ -69,7 +69,10 @@ namespace Project.V5
             }
             label2.Text = $"Наиболее частый Поставщик: {mostFrequent}";
         }
-
+        private void GetFirstOrders()
+        {
+            DateTime?
+        }
         private void buttonCalculateStatics_Click(object sender, EventArgs e)
         {
             GetBiggestOrder();
