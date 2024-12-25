@@ -5,9 +5,9 @@ VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project.V5", "Project.V5\Project.V5.csproj", "{371CB538-29F9-4292-9BDA-C991C85C04BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.ShabalinaYP.Sprint7.Project.V5.Lib", "Tyuiu.ShabalinaYP.Sprint7.Task0.V5.Lib\Tyuiu.ShabalinaYP.Sprint7.Project.V5.Lib.csproj", "{798F6E16-1428-4CE7-BCAC-7631B4B992B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.ShabalinaYuP.Sprint7.Project.V5.Lib", "Tyuiu.ShabalinaYP.Sprint7.Task0.V5.Lib\Tyuiu.ShabalinaYuP.Sprint7.Project.V5.Lib.csproj", "{798F6E16-1428-4CE7-BCAC-7631B4B992B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.ShabalinaYP.Sprint7.Task0.V5.Test", "Tyuiu.ShabalinaYP.Sprint7.Task0.V5.Test\Tyuiu.ShabalinaYP.Sprint7.Task0.V5.Test.csproj", "{F4C796BD-E045-46A9-852C-4EB8015E82DD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tyuiu.ShabalinaYuP.Sprint7.Task0.V5.Test", "Tyuiu.ShabalinaYP.Sprint7.Task0.V5.Test\Tyuiu.ShabalinaYuP.Sprint7.Task0.V5.Test.csproj", "{F4C796BD-E045-46A9-852C-4EB8015E82DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

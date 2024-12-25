@@ -69,15 +69,27 @@ namespace Project.V5
             }
             label2.Text = $"Наиболее частый Поставщик: {mostFrequent}";
         }
-        //private void GetFirstOrders()
-        //{
-          //  DateTime?
-        //}
+        private void GetFirstOrders()
+        {
+            DateTime? firstDate = null;
+            foreach (DataGridViewRow row in mainFormDataGrid.Rows)
+            {
+                if (row.IsNewRow) continue;
+                if (row.Cells[5].Value is DateTime datevalue)
+                {
+                    if (!firstDate.HasValue || datevalue < firstDate.Value)
+                    {
+                        firstDate = datevalue;
+                    }
+                }
+            }
+            label3.Text = $"Первый заказ будет доставлен: {firstDate}";
+        }
         private void buttonCalculateStatics_Click(object sender, EventArgs e)
         {
             GetBiggestOrder();
             GetMostRepeatedString();
-
+            GetFirstOrders();
         }
         
     }
