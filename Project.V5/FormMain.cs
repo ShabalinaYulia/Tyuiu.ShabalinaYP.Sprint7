@@ -1,5 +1,6 @@
 using System.Data;
 using Tyuiu.ShabalinaYP.Sprint7.Task0.V5.Lib;
+using System.IO;
 namespace Project.V5
 {
     public partial class FormMain : Form
@@ -8,6 +9,8 @@ namespace Project.V5
         public List<string[]> arrayValues;
         private DataTable selectedItemsTable = new DataTable();
         private List<string[]> selectedRows = new List<string[]>();
+        public DataTable OriginalFile = new DataTable();
+        public int BiggestOrders;
         public FormMain()
         {
             InitializeComponent();
@@ -21,7 +24,7 @@ namespace Project.V5
             dataGridViewCompletedOrders_SYP.DataSource = selectedItemsTable;
         }
 
-        private void buttonOpenFile_SYP_Click(object sender, EventArgs e)
+        public void buttonOpenFile_SYP_Click(object sender, EventArgs e)
         {
             if (openFileDialogTask_SYP.ShowDialog() == DialogResult.OK)
             {
@@ -51,25 +54,29 @@ namespace Project.V5
                         {
                             listDataTable.Rows.Add(row);
                         }
-
+                        
                         dataGridViewOriginalFile_SYP.DataSource = listDataTable;
                         buttonSaveFile_SYP.Enabled = true;
                         buttonAddCompletedOrders_SYP.Enabled = true;
                         dataGridViewCompletedOrders_SYP.AllowUserToAddRows = false;
+                        buttonSearchProduct_SYP.Enabled = true;
+                        labelSearchProduct_SYP.Enabled = true;
+                        textBoxSearch_SYP.Enabled = true;
                         if (listDataTable.Columns.Count > 0)
                         {
                             listDataTable.Columns[0].ColumnName = "№";
+                            
                             listDataTable.Columns[2].ColumnName = "Товар";
                             listDataTable.Columns[1].ColumnName = "Код товара";
                             listDataTable.Columns[3].ColumnName = "Поставщик";
                             listDataTable.Columns[4].ColumnName = "Количество";
                             listDataTable.Columns[5].ColumnName = "Дата заказа";
+                            dataGridViewOriginalFile_SYP.Columns["Дата заказа"].ValueType = typeof(DateTime);
+                            dataGridViewOriginalFile_SYP.Columns["Дата заказа"].DefaultCellStyle.Format = "dd.MM.yyyy";
+                            listDataTable.Columns[6].ColumnName = "Стоимость единицы";
                             selectedItemsTable = listDataTable.Clone();
-                            
+                            OriginalFile = listDataTable.Copy();
                             dataGridViewCompletedOrders_SYP.DataSource = selectedItemsTable;
-                            
-
-
                         }
                     }
                     catch (FileNotFoundException ex)
@@ -208,29 +215,51 @@ namespace Project.V5
         }
         private void buttonStatics_SYP_Click(object obj, EventArgs e)
         {
-            FormStatics formStatics = new FormStatics();
+            FormStatics formStatics = new FormStatics(dataGridViewOriginalFile_SYP);
             formStatics.ShowDialog();
         }
-        private void buttonSearch_SBI_Click(object sender, EventArgs e)
+        private void buttonSearch_SYP_Click(object sender, EventArgs e)
         {
-            if (int.TryParse(textBoxSearch_SYP.Text, out int number))
+            string searchProduct = textBoxSearch_SYP.Text.Trim();
+            DataGridView searchDataGrid = tabControlFile_SYP.SelectedIndex == 0 ? dataGridViewOriginalFile_SYP : dataGridViewCompletedOrders_SYP;
+
+            if (searchDataGrid.Rows.Count == 0)
             {
-                DataGridView dataGrid = tabControlFile_SYP.SelectedIndex == 0 ? dataGridViewOriginalFile_SYP : dataGridViewCompletedOrders_SYP;
-                foreach (DataGridViewRow row in dataGrid.Rows)
+                MessageBox.Show("Ничего не найдено", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            List<int> rowsIndexes = new List<int>();
+            for (int i = 0; i < searchDataGrid.Rows.Count; i++)
+            {
+                if (searchDataGrid.Rows[i].IsNewRow)
                 {
-                    if (Convert.ToInt32(row.Cells[0].Value) != number)
+                    continue;
+                }
+                bool matching = false;
+                foreach (DataGridViewCell Cell in searchDataGrid.Rows[i].Cells)
+                {
+                    string cellValue = Cell.Value?.ToString();
+                    if (cellValue != null && cellValue.Contains(searchProduct, StringComparison.OrdinalIgnoreCase))
                     {
-                        dataGrid.Rows.Remove(row);
+                        matching = true;
+                        break;
                     }
                 }
+                if (!matching)
+                {
+                    rowsIndexes.Add(i);
+                }
             }
-            else
+            for (int i = rowsIndexes.Count - 1; i >= 0; i--)
             {
-                MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
+                searchDataGrid.Rows.RemoveAt(rowsIndexes[i]);
+            }            
         }
-
-    
+        private void buttonOpenStatic_SYP_Click(object sender, EventArgs e) 
+        {
+            FormStatics staticForm = new FormStatics(dataGridViewOriginalFile_SYP);
+            staticForm.Show();
+            
+        }
+        
     }
 }

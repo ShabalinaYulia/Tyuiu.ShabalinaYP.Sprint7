@@ -11,8 +11,7 @@ namespace Tyuiu.ShabalinaYP.Sprint7.Task0.V5.Test
             List<string[]> res = dataService.WholesaleBase(@"C:\Users\User\source\repos\sprint7.csv");
             List<string[]> wait = new List<string[]>
             {
-                {new string[]{"товар", "код товара", "поставщик", "количество на складе"} },
-                {new string[]{"диван", "12", "ООО икея", "34" } }
+                {new string[]{"1", "10021", "Клавиатура механическая", "ООО “Техномир”", "15", "23.02.2025"} }
             };
             CollectionAssert.Equals(res, wait);
                 
