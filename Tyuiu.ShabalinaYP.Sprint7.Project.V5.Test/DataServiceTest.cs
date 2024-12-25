@@ -1,5 +1,5 @@
-﻿using Tyuiu.ShabalinaYuP.Sprint7.Project.V5.Lib;
-namespace Tyuiu.ShabalinaYP.Sprint7.Task0.V5.Test
+﻿using Tyuiu.ShabalinaYP.Sprint7.Project.V5.Lib;
+namespace Tyuiu.ShabalinaYP.Sprint7.Project.V5.Test
 {
     [TestClass]
     public sealed class DataServiceTest
@@ -14,9 +14,5 @@ namespace Tyuiu.ShabalinaYP.Sprint7.Task0.V5.Test
                 {new string[]{"1", "10021", "Клавиатура механическая", "ООО “Техномир”", "15", "23.02.2025"} }
             };
             CollectionAssert.Equals(res, wait);
-                
-//
-
         }
-    }
 }

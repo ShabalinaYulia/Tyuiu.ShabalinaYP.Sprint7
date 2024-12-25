@@ -83,7 +83,7 @@ namespace Project.V5
                     }
                 }
             }
-            label3.Text = $"Первый заказ будет доставлен: {firstDate}";
+            label3.Text = $"Первый заказ будет доставлен: {firstDate.Value:dd.MM.yyyy}";
         }
         private void buttonCalculateStatics_Click(object sender, EventArgs e)
         {
