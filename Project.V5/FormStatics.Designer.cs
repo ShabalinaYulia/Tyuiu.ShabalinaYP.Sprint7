@@ -31,90 +31,93 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            label1 = new Label();
-            button = new Button();
-            label2 = new Label();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            label3 = new Label();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
+            labelBiggestOrder_SYP = new Label();
+            buttonAccessData_SYP = new Button();
+            labelRepeated_SYP = new Label();
+            chartStaticsProduct_SYP = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            labelExpensive_SYP = new Label();
+            ((System.ComponentModel.ISupportInitialize)chartStaticsProduct_SYP).BeginInit();
             SuspendLayout();
             // 
-            // label1
+            // labelBiggestOrder_SYP
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(12, 55);
-            label1.Name = "label1";
-            label1.Size = new Size(205, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Отсутствуют данные для статистики";
+            labelBiggestOrder_SYP.AutoSize = true;
+            labelBiggestOrder_SYP.Location = new Point(12, 55);
+            labelBiggestOrder_SYP.Name = "labelBiggestOrder_SYP";
+            labelBiggestOrder_SYP.Size = new Size(205, 15);
+            labelBiggestOrder_SYP.TabIndex = 0;
+            labelBiggestOrder_SYP.Text = "Отсутствуют данные для статистики";
             // 
-            // button
+            // buttonAccessData_SYP
             // 
-            button.Location = new Point(29, 248);
-            button.Name = "button";
-            button.Size = new Size(105, 92);
-            button.TabIndex = 1;
-            button.Text = "button1";
-            button.UseVisualStyleBackColor = true;
-            button.Click += buttonCalculateStatics_Click;
+            buttonAccessData_SYP.Location = new Point(29, 248);
+            buttonAccessData_SYP.Name = "buttonAccessData_SYP";
+            buttonAccessData_SYP.Size = new Size(105, 92);
+            buttonAccessData_SYP.TabIndex = 1;
+            buttonAccessData_SYP.Text = "Предоставить данные";
+            buttonAccessData_SYP.UseVisualStyleBackColor = true;
+            buttonAccessData_SYP.Click += buttonCalculateStatics_Click;
             // 
-            // label2
+            // labelRepeated_SYP
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(12, 155);
-            label2.Name = "label2";
-            label2.Size = new Size(205, 15);
-            label2.TabIndex = 2;
-            label2.Text = "Отсутствуют данные для статистики";
+            labelRepeated_SYP.AutoSize = true;
+            labelRepeated_SYP.Location = new Point(12, 156);
+            labelRepeated_SYP.Name = "labelRepeated_SYP";
+            labelRepeated_SYP.Size = new Size(205, 15);
+            labelRepeated_SYP.TabIndex = 2;
+            labelRepeated_SYP.Text = "Отсутствуют данные для статистики";
             // 
-            // chart1
+            // chartStaticsProduct_SYP
             // 
             chartArea1.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea1);
+            chartStaticsProduct_SYP.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            chart1.Legends.Add(legend1);
-            chart1.Location = new Point(307, 31);
-            chart1.Name = "chart1";
+            chartStaticsProduct_SYP.Legends.Add(legend1);
+            chartStaticsProduct_SYP.Location = new Point(282, 31);
+            chartStaticsProduct_SYP.Name = "chartStaticsProduct_SYP";
             series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            chart1.Series.Add(series1);
-            chart1.Size = new Size(300, 300);
-            chart1.TabIndex = 3;
-            chart1.Text = "chart1";
+            series1.Name = "ChartAreaProduct";
+            chartStaticsProduct_SYP.Series.Add(series1);
+            chartStaticsProduct_SYP.Size = new Size(354, 300);
+            chartStaticsProduct_SYP.TabIndex = 3;
+            chartStaticsProduct_SYP.Text = "Статистика товаров";
             // 
-            // label3
+            // labelExpensive_SYP
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 89);
-            label3.Name = "label3";
-            label3.Size = new Size(205, 15);
-            label3.TabIndex = 4;
-            label3.Text = "Отсутствуют данные для статистики";
+            labelExpensive_SYP.AutoSize = true;
+            labelExpensive_SYP.Location = new Point(12, 89);
+            labelExpensive_SYP.Name = "labelExpensive_SYP";
+            labelExpensive_SYP.Size = new Size(205, 15);
+            labelExpensive_SYP.TabIndex = 4;
+            labelExpensive_SYP.Text = "Отсутствуют данные для статистики";
             // 
             // FormStatics
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(648, 368);
-            Controls.Add(label3);
-            Controls.Add(chart1);
-            Controls.Add(label2);
-            Controls.Add(button);
-            Controls.Add(label1);
+            Controls.Add(labelExpensive_SYP);
+            Controls.Add(chartStaticsProduct_SYP);
+            Controls.Add(labelRepeated_SYP);
+            Controls.Add(buttonAccessData_SYP);
+            Controls.Add(labelBiggestOrder_SYP);
+            MaximizeBox = false;
             Name = "FormStatics";
-            Text = "FormStatics";
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Статистика";
+            ((System.ComponentModel.ISupportInitialize)chartStaticsProduct_SYP).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Button button;
-        private Label label2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private Label label3;
+        private Label labelBiggestOrder_SYP;
+        private Button buttonAccessData_SYP;
+        private Label labelRepeated_SYP;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartStaticsProduct_SYP;
+        private Label labelExpensive_SYP;
     }
 }

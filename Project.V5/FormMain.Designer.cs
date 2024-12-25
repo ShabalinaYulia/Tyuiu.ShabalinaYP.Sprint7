@@ -30,23 +30,22 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             panelInformation_SYP = new Panel();
-            menuStrip1 = new MenuStrip();
-            ToolStripMenuItem = new ToolStripMenuItem();
+            menuStripForButtons_SYP = new MenuStrip();
+            ToolStripMenuItemAboutProgram_SYP = new ToolStripMenuItem();
             ToolStripMenuItemGuide_SYP = new ToolStripMenuItem();
             ToolStripMenuItemAbout_SYP = new ToolStripMenuItem();
-            ToolStripMenuItemFile_SYP = new ToolStripMenuItem();
-            сохранитьToolStripMenuItem1 = new ToolStripMenuItem();
-            ToolStripMenuItemOpenNewFile_SYP = new ToolStripMenuItem();
+            toolStripMenuItem1 = new ToolStripMenuItem();
             panelManagerData_SYP = new Panel();
+            buttonForStatics_SYP = new Button();
             buttonSearchProduct_SYP = new Button();
-            buttonDeleteCompletedOrders_SYP = new Button();
             labelSearchProduct_SYP = new Label();
-            buttonAddCompletedOrders_SYP = new Button();
             textBoxSearch_SYP = new TextBox();
-            groupBox1 = new GroupBox();
+            groupBoxWorkWithFile_SYP = new GroupBox();
             buttonOpenFile_SYP = new Button();
             buttonSaveFile_SYP = new Button();
-            groupBox2 = new GroupBox();
+            groupBoxDoneOrders_SYP = new GroupBox();
+            buttonAddCompletedOrders_SYP = new Button();
+            buttonDeleteCompletedOrders_SYP = new Button();
             panelDataFile_SYP = new Panel();
             groupBoxDataFile_SYP = new GroupBox();
             tabControlFile_SYP = new TabControl();
@@ -56,11 +55,11 @@
             dataGridViewCompletedOrders_SYP = new DataGridView();
             openFileDialogTask_SYP = new OpenFileDialog();
             saveFileDialog_SYP = new SaveFileDialog();
-            button1 = new Button();
             panelInformation_SYP.SuspendLayout();
-            menuStrip1.SuspendLayout();
+            menuStripForButtons_SYP.SuspendLayout();
             panelManagerData_SYP.SuspendLayout();
-            groupBox1.SuspendLayout();
+            groupBoxWorkWithFile_SYP.SuspendLayout();
+            groupBoxDoneOrders_SYP.SuspendLayout();
             panelDataFile_SYP.SuspendLayout();
             groupBoxDataFile_SYP.SuspendLayout();
             tabControlFile_SYP.SuspendLayout();
@@ -73,29 +72,29 @@
             // panelInformation_SYP
             // 
             panelInformation_SYP.BackColor = SystemColors.ActiveCaption;
-            panelInformation_SYP.Controls.Add(menuStrip1);
+            panelInformation_SYP.Controls.Add(menuStripForButtons_SYP);
             panelInformation_SYP.Dock = DockStyle.Top;
             panelInformation_SYP.Location = new Point(0, 0);
             panelInformation_SYP.Name = "panelInformation_SYP";
             panelInformation_SYP.Size = new Size(964, 35);
             panelInformation_SYP.TabIndex = 0;
             // 
-            // menuStrip1
+            // menuStripForButtons_SYP
             // 
-            menuStrip1.Dock = DockStyle.Fill;
-            menuStrip1.Items.AddRange(new ToolStripItem[] { ToolStripMenuItem, ToolStripMenuItemFile_SYP });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(964, 35);
-            menuStrip1.TabIndex = 0;
-            menuStrip1.Text = "menuStrip1";
+            menuStripForButtons_SYP.Dock = DockStyle.Fill;
+            menuStripForButtons_SYP.Items.AddRange(new ToolStripItem[] { ToolStripMenuItemAboutProgram_SYP, toolStripMenuItem1 });
+            menuStripForButtons_SYP.Location = new Point(0, 0);
+            menuStripForButtons_SYP.Name = "menuStripForButtons_SYP";
+            menuStripForButtons_SYP.Size = new Size(964, 35);
+            menuStripForButtons_SYP.TabIndex = 0;
+            menuStripForButtons_SYP.Text = "menuStrip1";
             // 
-            // ToolStripMenuItem
+            // ToolStripMenuItemAboutProgram_SYP
             // 
-            ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { ToolStripMenuItemGuide_SYP, ToolStripMenuItemAbout_SYP });
-            ToolStripMenuItem.Name = "ToolStripMenuItem";
-            ToolStripMenuItem.Size = new Size(94, 31);
-            ToolStripMenuItem.Text = "О программе";
+            ToolStripMenuItemAboutProgram_SYP.DropDownItems.AddRange(new ToolStripItem[] { ToolStripMenuItemGuide_SYP, ToolStripMenuItemAbout_SYP });
+            ToolStripMenuItemAboutProgram_SYP.Name = "ToolStripMenuItemAboutProgram_SYP";
+            ToolStripMenuItemAboutProgram_SYP.Size = new Size(94, 31);
+            ToolStripMenuItemAboutProgram_SYP.Text = "О программе";
             // 
             // ToolStripMenuItemGuide_SYP
             // 
@@ -111,105 +110,76 @@
             ToolStripMenuItemAbout_SYP.Text = "Справка";
             ToolStripMenuItemAbout_SYP.Click += ToolStripMenuItemAbout_SYP_Click;
             // 
-            // ToolStripMenuItemFile_SYP
+            // toolStripMenuItem1
             // 
-            ToolStripMenuItemFile_SYP.DropDownItems.AddRange(new ToolStripItem[] { сохранитьToolStripMenuItem1, ToolStripMenuItemOpenNewFile_SYP });
-            ToolStripMenuItemFile_SYP.Name = "ToolStripMenuItemFile_SYP";
-            ToolStripMenuItemFile_SYP.Size = new Size(48, 31);
-            ToolStripMenuItemFile_SYP.Text = "Файл";
-            // 
-            // сохранитьToolStripMenuItem1
-            // 
-            сохранитьToolStripMenuItem1.Name = "сохранитьToolStripMenuItem1";
-            сохранитьToolStripMenuItem1.Size = new Size(196, 22);
-            сохранитьToolStripMenuItem1.Text = "Сохранить изменения";
-            сохранитьToolStripMenuItem1.Click += buttonChangeFile_SYP_Click;
-            // 
-            // ToolStripMenuItemOpenNewFile_SYP
-            // 
-            ToolStripMenuItemOpenNewFile_SYP.Name = "ToolStripMenuItemOpenNewFile_SYP";
-            ToolStripMenuItemOpenNewFile_SYP.Size = new Size(196, 22);
-            ToolStripMenuItemOpenNewFile_SYP.Text = "Открыть новый файл";
-            ToolStripMenuItemOpenNewFile_SYP.Click += buttonOpenFile_SYP_Click;
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new Size(12, 31);
             // 
             // panelManagerData_SYP
             // 
-            panelManagerData_SYP.BackColor = Color.RosyBrown;
-            panelManagerData_SYP.Controls.Add(button1);
+            panelManagerData_SYP.BackColor = SystemColors.ButtonFace;
+            panelManagerData_SYP.Controls.Add(buttonForStatics_SYP);
             panelManagerData_SYP.Controls.Add(buttonSearchProduct_SYP);
-            panelManagerData_SYP.Controls.Add(buttonDeleteCompletedOrders_SYP);
             panelManagerData_SYP.Controls.Add(labelSearchProduct_SYP);
-            panelManagerData_SYP.Controls.Add(buttonAddCompletedOrders_SYP);
             panelManagerData_SYP.Controls.Add(textBoxSearch_SYP);
-            panelManagerData_SYP.Controls.Add(groupBox1);
-            panelManagerData_SYP.Controls.Add(groupBox2);
+            panelManagerData_SYP.Controls.Add(groupBoxWorkWithFile_SYP);
+            panelManagerData_SYP.Controls.Add(groupBoxDoneOrders_SYP);
             panelManagerData_SYP.Dock = DockStyle.Left;
             panelManagerData_SYP.Location = new Point(0, 35);
             panelManagerData_SYP.Name = "panelManagerData_SYP";
             panelManagerData_SYP.Size = new Size(200, 415);
             panelManagerData_SYP.TabIndex = 1;
             // 
+            // buttonForStatics_SYP
+            // 
+            buttonForStatics_SYP.Enabled = false;
+            buttonForStatics_SYP.Image = (Image)resources.GetObject("buttonForStatics_SYP.Image");
+            buttonForStatics_SYP.Location = new Point(9, 114);
+            buttonForStatics_SYP.Name = "buttonForStatics_SYP";
+            buttonForStatics_SYP.Size = new Size(60, 53);
+            buttonForStatics_SYP.TabIndex = 6;
+            buttonForStatics_SYP.UseVisualStyleBackColor = true;
+            buttonForStatics_SYP.Click += buttonStatics_SYP_Click;
+            // 
             // buttonSearchProduct_SYP
             // 
             buttonSearchProduct_SYP.Enabled = false;
             buttonSearchProduct_SYP.Image = (Image)resources.GetObject("buttonSearchProduct_SYP.Image");
-            buttonSearchProduct_SYP.Location = new Point(3, 114);
+            buttonSearchProduct_SYP.Location = new Point(10, 342);
             buttonSearchProduct_SYP.Name = "buttonSearchProduct_SYP";
             buttonSearchProduct_SYP.Size = new Size(42, 41);
             buttonSearchProduct_SYP.TabIndex = 4;
             buttonSearchProduct_SYP.UseVisualStyleBackColor = true;
             buttonSearchProduct_SYP.Click += buttonSearch_SYP_Click;
             // 
-            // buttonDeleteCompletedOrders_SYP
-            // 
-            buttonDeleteCompletedOrders_SYP.Enabled = false;
-            buttonDeleteCompletedOrders_SYP.Image = (Image)resources.GetObject("buttonDeleteCompletedOrders_SYP.Image");
-            buttonDeleteCompletedOrders_SYP.Location = new Point(72, 246);
-            buttonDeleteCompletedOrders_SYP.Name = "buttonDeleteCompletedOrders_SYP";
-            buttonDeleteCompletedOrders_SYP.Size = new Size(57, 51);
-            buttonDeleteCompletedOrders_SYP.TabIndex = 3;
-            buttonDeleteCompletedOrders_SYP.UseVisualStyleBackColor = true;
-            buttonDeleteCompletedOrders_SYP.Click += buttonDeleteCompletedOrders_SYP_Click;
-            // 
             // labelSearchProduct_SYP
             // 
             labelSearchProduct_SYP.AutoSize = true;
             labelSearchProduct_SYP.Enabled = false;
-            labelSearchProduct_SYP.Location = new Point(51, 111);
+            labelSearchProduct_SYP.Location = new Point(57, 342);
             labelSearchProduct_SYP.Name = "labelSearchProduct_SYP";
             labelSearchProduct_SYP.Size = new Size(143, 15);
             labelSearchProduct_SYP.TabIndex = 3;
             labelSearchProduct_SYP.Text = "Введите название товара";
             // 
-            // buttonAddCompletedOrders_SYP
-            // 
-            buttonAddCompletedOrders_SYP.Enabled = false;
-            buttonAddCompletedOrders_SYP.Image = (Image)resources.GetObject("buttonAddCompletedOrders_SYP.Image");
-            buttonAddCompletedOrders_SYP.Location = new Point(9, 246);
-            buttonAddCompletedOrders_SYP.Name = "buttonAddCompletedOrders_SYP";
-            buttonAddCompletedOrders_SYP.Size = new Size(57, 51);
-            buttonAddCompletedOrders_SYP.TabIndex = 2;
-            buttonAddCompletedOrders_SYP.UseVisualStyleBackColor = true;
-            buttonAddCompletedOrders_SYP.Click += buttonAddCompletedOrders_SYP_Click;
-            // 
             // textBoxSearch_SYP
             // 
             textBoxSearch_SYP.Enabled = false;
-            textBoxSearch_SYP.Location = new Point(51, 132);
+            textBoxSearch_SYP.Location = new Point(57, 360);
             textBoxSearch_SYP.Name = "textBoxSearch_SYP";
-            textBoxSearch_SYP.Size = new Size(143, 23);
+            textBoxSearch_SYP.Size = new Size(140, 23);
             textBoxSearch_SYP.TabIndex = 2;
             // 
-            // groupBox1
+            // groupBoxWorkWithFile_SYP
             // 
-            groupBox1.Controls.Add(buttonOpenFile_SYP);
-            groupBox1.Controls.Add(buttonSaveFile_SYP);
-            groupBox1.Location = new Point(3, 22);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(191, 86);
-            groupBox1.TabIndex = 4;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            groupBoxWorkWithFile_SYP.Controls.Add(buttonOpenFile_SYP);
+            groupBoxWorkWithFile_SYP.Controls.Add(buttonSaveFile_SYP);
+            groupBoxWorkWithFile_SYP.Location = new Point(3, 22);
+            groupBoxWorkWithFile_SYP.Name = "groupBoxWorkWithFile_SYP";
+            groupBoxWorkWithFile_SYP.Size = new Size(191, 86);
+            groupBoxWorkWithFile_SYP.TabIndex = 4;
+            groupBoxWorkWithFile_SYP.TabStop = false;
+            groupBoxWorkWithFile_SYP.Text = "Работа с файлом";
             // 
             // buttonOpenFile_SYP
             // 
@@ -232,14 +202,38 @@
             buttonSaveFile_SYP.UseVisualStyleBackColor = true;
             buttonSaveFile_SYP.Click += buttonSaveFile_SYP_Click;
             // 
-            // groupBox2
+            // groupBoxDoneOrders_SYP
             // 
-            groupBox2.Location = new Point(0, 218);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(200, 100);
-            groupBox2.TabIndex = 5;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "groupBox2";
+            groupBoxDoneOrders_SYP.Controls.Add(buttonAddCompletedOrders_SYP);
+            groupBoxDoneOrders_SYP.Controls.Add(buttonDeleteCompletedOrders_SYP);
+            groupBoxDoneOrders_SYP.Location = new Point(1, 173);
+            groupBoxDoneOrders_SYP.Name = "groupBoxDoneOrders_SYP";
+            groupBoxDoneOrders_SYP.Size = new Size(200, 100);
+            groupBoxDoneOrders_SYP.TabIndex = 5;
+            groupBoxDoneOrders_SYP.TabStop = false;
+            groupBoxDoneOrders_SYP.Text = "Доставленные заказы";
+            // 
+            // buttonAddCompletedOrders_SYP
+            // 
+            buttonAddCompletedOrders_SYP.Enabled = false;
+            buttonAddCompletedOrders_SYP.Image = (Image)resources.GetObject("buttonAddCompletedOrders_SYP.Image");
+            buttonAddCompletedOrders_SYP.Location = new Point(12, 22);
+            buttonAddCompletedOrders_SYP.Name = "buttonAddCompletedOrders_SYP";
+            buttonAddCompletedOrders_SYP.Size = new Size(57, 51);
+            buttonAddCompletedOrders_SYP.TabIndex = 2;
+            buttonAddCompletedOrders_SYP.UseVisualStyleBackColor = true;
+            buttonAddCompletedOrders_SYP.Click += buttonAddCompletedOrders_SYP_Click;
+            // 
+            // buttonDeleteCompletedOrders_SYP
+            // 
+            buttonDeleteCompletedOrders_SYP.Enabled = false;
+            buttonDeleteCompletedOrders_SYP.Image = (Image)resources.GetObject("buttonDeleteCompletedOrders_SYP.Image");
+            buttonDeleteCompletedOrders_SYP.Location = new Point(75, 22);
+            buttonDeleteCompletedOrders_SYP.Name = "buttonDeleteCompletedOrders_SYP";
+            buttonDeleteCompletedOrders_SYP.Size = new Size(57, 51);
+            buttonDeleteCompletedOrders_SYP.TabIndex = 3;
+            buttonDeleteCompletedOrders_SYP.UseVisualStyleBackColor = true;
+            buttonDeleteCompletedOrders_SYP.Click += buttonDeleteCompletedOrders_SYP_Click;
             // 
             // panelDataFile_SYP
             // 
@@ -320,16 +314,6 @@
             // 
             openFileDialogTask_SYP.FileName = "openFileDialog1";
             // 
-            // button1
-            // 
-            button1.Location = new Point(32, 359);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 6;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += buttonStatics_SYP_Click;
-            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -338,16 +322,17 @@
             Controls.Add(panelDataFile_SYP);
             Controls.Add(panelManagerData_SYP);
             Controls.Add(panelInformation_SYP);
-            MainMenuStrip = menuStrip1;
+            MainMenuStrip = menuStripForButtons_SYP;
             Name = "FormMain";
-            Text = "Form1";
+            Text = "Оптовая база";
             panelInformation_SYP.ResumeLayout(false);
             panelInformation_SYP.PerformLayout();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            menuStripForButtons_SYP.ResumeLayout(false);
+            menuStripForButtons_SYP.PerformLayout();
             panelManagerData_SYP.ResumeLayout(false);
             panelManagerData_SYP.PerformLayout();
-            groupBox1.ResumeLayout(false);
+            groupBoxWorkWithFile_SYP.ResumeLayout(false);
+            groupBoxDoneOrders_SYP.ResumeLayout(false);
             panelDataFile_SYP.ResumeLayout(false);
             groupBoxDataFile_SYP.ResumeLayout(false);
             tabControlFile_SYP.ResumeLayout(false);
@@ -374,19 +359,21 @@
         private DataGridView dataGridViewOriginalFile_SYP;
         private DataGridView dataGridViewCompletedOrders_SYP;
         private Button buttonAddCompletedOrders_SYP;
-        private MenuStrip menuStrip1;
+        private MenuStrip menuStripForButtons_SYP;
         private ToolStripMenuItem ToolStripMenuItem;
         private ToolStripMenuItem ToolStripMenuItemGuide_SYP;
         private ToolStripMenuItem ToolStripMenuItemAbout_SYP;
         private Button buttonDeleteCompletedOrders_SYP;
         private ToolStripMenuItem ToolStripMenuItemFile_SYP;
-        private ToolStripMenuItem сохранитьToolStripMenuItem1;
+        private ToolStripMenuItem ToolStripMenuItemtoSaveChange_SYP;
         private ToolStripMenuItem ToolStripMenuItemOpenNewFile_SYP;
-        private GroupBox groupBox1;
+        private GroupBox groupBoxWorkWithFile_SYP;
         private Button buttonSearchProduct_SYP;
         private Label labelSearchProduct_SYP;
         private TextBox textBoxSearch_SYP;
-        private GroupBox groupBox2;
-        private Button button1;
+        private GroupBox groupBoxDoneOrders_SYP;
+        private Button buttonForStatics_SYP;
+        private ToolStripMenuItem ToolStripMenuItemAboutProgram_SYP;
+        private ToolStripMenuItem toolStripMenuItem1;
     }
 }

@@ -62,6 +62,7 @@ namespace Project.V5
                         buttonSearchProduct_SYP.Enabled = true;
                         labelSearchProduct_SYP.Enabled = true;
                         textBoxSearch_SYP.Enabled = true;
+                        buttonForStatics_SYP.Enabled = true;
                         if (listDataTable.Columns.Count > 0)
                         {
                             listDataTable.Columns[0].ColumnName = "¹";

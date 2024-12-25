@@ -15,4 +15,5 @@ namespace Tyuiu.ShabalinaYP.Sprint7.Project.V5.Test
             };
             CollectionAssert.Equals(res, wait);
         }
+    }
 }
