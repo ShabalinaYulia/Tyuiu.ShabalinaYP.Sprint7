@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
+            pictureBoxIcon_SYP = new PictureBox();
+            labelAbout_SYP = new Label();
             buttonOK_SYP = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxIcon_SYP).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxIcon_SYP
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(43, 24);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(180, 242);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pictureBoxIcon_SYP.Image = (Image)resources.GetObject("pictureBoxIcon_SYP.Image");
+            pictureBoxIcon_SYP.Location = new Point(43, 24);
+            pictureBoxIcon_SYP.Name = "pictureBoxIcon_SYP";
+            pictureBoxIcon_SYP.Size = new Size(180, 242);
+            pictureBoxIcon_SYP.TabIndex = 0;
+            pictureBoxIcon_SYP.TabStop = false;
             // 
-            // label1
+            // labelAbout_SYP
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(250, 68);
-            label1.Name = "label1";
-            label1.Size = new Size(303, 120);
-            label1.TabIndex = 1;
-            label1.Text = resources.GetString("label1.Text");
+            labelAbout_SYP.AutoSize = true;
+            labelAbout_SYP.Location = new Point(250, 68);
+            labelAbout_SYP.Name = "labelAbout_SYP";
+            labelAbout_SYP.Size = new Size(303, 120);
+            labelAbout_SYP.TabIndex = 1;
+            labelAbout_SYP.Text = resources.GetString("labelAbout_SYP.Text");
             // 
             // buttonOK_SYP
             // 
@@ -69,19 +69,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(587, 313);
             Controls.Add(buttonOK_SYP);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
+            Controls.Add(labelAbout_SYP);
+            Controls.Add(pictureBoxIcon_SYP);
             Name = "FormAbout";
             Text = "О программе";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxIcon_SYP).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private Label label1;
+        private PictureBox pictureBoxIcon_SYP;
+        private Label labelAbout_SYP;
         private Button buttonOK_SYP;
     }
 }

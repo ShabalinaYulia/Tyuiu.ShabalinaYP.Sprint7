@@ -99,14 +99,14 @@
             // ToolStripMenuItemGuide_SYP
             // 
             ToolStripMenuItemGuide_SYP.Name = "ToolStripMenuItemGuide_SYP";
-            ToolStripMenuItemGuide_SYP.Size = new Size(143, 22);
+            ToolStripMenuItemGuide_SYP.Size = new Size(180, 22);
             ToolStripMenuItemGuide_SYP.Text = "Руководство";
-            ToolStripMenuItemGuide_SYP.Click += buttonStatics_SYP_Click;
+            ToolStripMenuItemGuide_SYP.Click += buttonOpenStatic_SYP_Click;
             // 
             // ToolStripMenuItemAbout_SYP
             // 
             ToolStripMenuItemAbout_SYP.Name = "ToolStripMenuItemAbout_SYP";
-            ToolStripMenuItemAbout_SYP.Size = new Size(143, 22);
+            ToolStripMenuItemAbout_SYP.Size = new Size(180, 22);
             ToolStripMenuItemAbout_SYP.Text = "Справка";
             ToolStripMenuItemAbout_SYP.Click += ToolStripMenuItemAbout_SYP_Click;
             // 

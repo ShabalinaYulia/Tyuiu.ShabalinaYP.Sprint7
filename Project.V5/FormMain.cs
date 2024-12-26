@@ -127,38 +127,7 @@ namespace Project.V5
                 str = "";
             }
         }
-        private void buttonChangeFile_SYP_Click(object sender, EventArgs e)
-        {
-            saveFileDialog_SYP.FileName = "wholesale base.csv";
-            saveFileDialog_SYP.InitialDirectory = Directory.GetCurrentDirectory();
-            saveFileDialog_SYP.ShowDialog();
-
-            string path = saveFileDialog_SYP.FileName;
-            FileInfo fileInfo = new FileInfo(path);
-            if (fileInfo.Exists)
-            {
-                File.Delete(path);
-            }
-            int rows = dataGridViewOriginalFile_SYP.RowCount;
-            int columns = dataGridViewOriginalFile_SYP.ColumnCount;
-            string str = "";
-            for (int i = 0; i < rows; i++)
-            {
-                for (int j = 0; j < columns; j++)
-                {
-                    if (j != columns - 1)
-                    {
-                        str += dataGridViewOriginalFile_SYP.Rows[i].Cells[j].Value + ";";
-                    }
-                    else
-                    {
-                        str += dataGridViewOriginalFile_SYP.Rows[i].Cells[j].Value;
-                    }
-                }
-                File.AppendAllText(path, str + Environment.NewLine);
-                str = "";
-            }
-        }
+        
         private void ToolStripMenuItemAbout_SYP_Click(object sender, EventArgs e)
         {
             FormAbout formAbout = new FormAbout();
@@ -257,8 +226,8 @@ namespace Project.V5
         }
         private void buttonOpenStatic_SYP_Click(object sender, EventArgs e) 
         {
-            FormStatics staticForm = new FormStatics(dataGridViewOriginalFile_SYP);
-            staticForm.Show();
+            FormGuide formGuide = new FormGuide();
+            formGuide.Show();
             
         }
         
